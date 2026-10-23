@@ -6,7 +6,7 @@ extends Node
 ## while driving the track of the week; attempts include completed laps.
 ##
 ## File: user://totw_stats.json
-##   { "<week start date>_<track id>": { track_id, track_name, attempts, laps, seconds } }
+##   { "<week start date>_<track id>": { track_name, attempts, laps, seconds } }
 
 const STATS_PATH := "user://totw_stats.json"
 const MIN_ATTEMPT_TIME := 2.0
@@ -59,7 +59,6 @@ func _on_track_initialized(track: Track) -> void:
 	# Add an entry for this week and track if there is none
 	if not _stats.has(id):
 		_stats[id] = {
-			track_id = profile.id,
 			track_name = profile.track_name,
 			attempts = 0,
 			laps = 0,

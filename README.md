@@ -58,7 +58,6 @@ Start Throttle Trace through Steam and drive the Track of the Week in Time Attac
 		"attempts": 46,
 		"laps": 34,
 		"seconds": 2537.2,
-		"track_id": "c2104ce6-cc2a-44ed-a7eb-af75d8945efd",
 		"track_name": "Luxomburg GP by LUCIEN"
 	}
 }
