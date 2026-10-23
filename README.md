@@ -66,6 +66,8 @@ Start Throttle Trace through Steam and drive the Track of the Week in Time Attac
 
 The file is saved whenever an attempt ends and whenever you pause.
 
+Your stats are saved locally to this file only. They are not synced with steam. Loosing or deleting the file resets your statistics.
+
 ## Uninstall
 
 Delete `mods/totw_stats/` from the user data folder. Your stats stay in `totw_stats.json` until you delete that file too.
