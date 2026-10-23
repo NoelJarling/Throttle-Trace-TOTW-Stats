@@ -12,8 +12,8 @@ Time                     42:17
 ```
 
 - **Attempts:** every lap you started and drove for more than 2 seconds, whether you finished it, restarted or left the track. Finished laps count as attempts too.
-- **Laps:** every lap you finished, invalid laps included.
-- **Time:** time spent driving this week's track. Pauses and the pre-race screen don't count. It shows as `m:ss`, and from one hour on as `h:mm:ss`.
+- **Laps:** every lap you finished.
+- **Time:** time spent driving this week's track.
 
 The stats start from zero every week (weeks start on Monday, like the Track of the Week) and are kept per week in `totw_stats.json`.
 
