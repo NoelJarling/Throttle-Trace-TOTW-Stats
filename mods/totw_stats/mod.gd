@@ -6,13 +6,13 @@ extends Node
 ## while driving the track of the week; attempts include completed laps.
 ##
 ## File: user://totw_stats.json
-##   { "<week start date>": { track_id, track_name, attempts, laps, seconds } }
+##   { "<week start date>_<track id>": { track_id, track_name, attempts, laps, seconds } }
 
 const STATS_PATH := "user://totw_stats.json"
 const MIN_ATTEMPT_TIME := 2.0
 
 var _stats := {}
-var _week := {}  # this week's entry in _stats while driving the track of the week
+var _week := {}  # entry for this week and track in _stats while driving the track of the week
 var _track: Track
 var _last_lap_time := 0.0  # read before a restart resets the lap
 var _laps_label_value: Label  # attempts · laps value in the timing box
@@ -55,17 +55,17 @@ func _on_track_initialized(track: Track) -> void:
 		_stats = data
 
 	var profile: TrackProfile = track.params.profile
-	var date := TrackOfTheWeekManager.get_week_start_date()
-	# Add an entry for the current week if there is none
-	if not _stats.has(date):
-		_stats[date] = {
+	var id := "%s_%s" % [TrackOfTheWeekManager.get_week_start_date(), profile.id]
+	# Add an entry for this week and track if there is none
+	if not _stats.has(id):
+		_stats[id] = {
 			track_id = profile.id,
 			track_name = profile.track_name,
 			attempts = 0,
 			laps = 0,
 			seconds = 0.0
 		}
-	_week = _stats[date]
+	_week = _stats[id]
 	_track = track
 	track.player.lap_completed.connect(_on_lap_completed)
 	# Save to file if a player pauses (a full restart re-initializes the same track)

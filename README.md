@@ -15,7 +15,7 @@ Time                     42:17
 - **Laps:** every lap you finished.
 - **Time:** time spent driving this week's track.
 
-The stats start from zero every week (weeks start on Monday, like the Track of the Week) and are kept per week in `totw_stats.json`.
+The stats start from zero every week (weeks start on Monday 00:00 UTC, like the Track of the Week) and are kept per week and track in `totw_stats.json`.
 
 Built for Throttle Trace v0.40.1 (Godot 4.6). Game updates may break it.
 
@@ -50,15 +50,15 @@ Start Throttle Trace through Steam and drive the Track of the Week in Time Attac
 
 ## Stats file
 
-`totw_stats.json` holds one entry per week, keyed by the date the week starts:
+`totw_stats.json` holds one entry per week and track, keyed by the date the week starts and the track's id:
 
 ```json
 {
-	"2026-10-19": {
+	"2026-10-19_c2104ce6-cc2a-44ed-a7eb-af75d8945efd": {
 		"attempts": 46,
 		"laps": 34,
 		"seconds": 2537.2,
-		"track_id": "...",
+		"track_id": "c2104ce6-cc2a-44ed-a7eb-af75d8945efd",
 		"track_name": "Luxomburg GP by LUCIEN"
 	}
 }
